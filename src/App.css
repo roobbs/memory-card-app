@@ -1,42 +1,51 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.header {
+  font-family: monospace;
+  color: #646cff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.footer {
+  display: flex;
+  justify-content: center;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scoreDiv {
+  background-color: rgb(121, 121, 121);
+  align-self: center;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.cards {
+  border: 1px solid white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
 }
-
 .card {
-  padding: 2em;
+  min-height: 15rem;
+  min-width: 10rem;
+  background-color: rgb(59, 81, 74);
+  border-radius: 10px;
+  padding: 1rem;
 }
-
-.read-the-docs {
-  color: #888;
+.cardImage {
+  height: 100px;
+  width: 100px;
+  border: 2px solid white;
+  border-radius: 6px;
 }
