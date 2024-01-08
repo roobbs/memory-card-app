@@ -1,6 +1,7 @@
 import Card from "./Card";
 import allCards from "../info";
 import { useState, useEffect } from "react";
+import confetti from "canvas-confetti";
 
 export default function Content() {
   const [score, setScore] = useState(0);
@@ -28,6 +29,7 @@ export default function Content() {
     if (score === allCards.length - 1) {
       setWin(true);
       setBestScore(0);
+      confetti();
       return;
     }
     setScore((prevScore) => prevScore + 1);
