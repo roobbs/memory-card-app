@@ -131,3 +131,75 @@
   font-weight: 600;
   font-size: 1.2rem;
 }
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+@media screen and (max-width: 650px) {
+  #root {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-image: url(./assets/wallpaper.jpg!d);
+  }
+  .header {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .logo {
+    height: 60px;
+    width: 60px;
+  }
+  .content {
+    gap: 1.5rem;
+    padding-top: 1.2rem;
+  }
+  .scoreDiv {
+    padding: 0.7rem 1rem;
+    display: flex;
+    gap: 1rem;
+    align-self: center;
+    margin: 0;
+  }
+  .card {
+    height: 10rem;
+    width: 7rem;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .cardImage {
+    width: 135px;
+    height: 135px;
+  }
+  .num {
+    font-size: 25px;
+  }
+  .win {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .winSquare {
+    border: 3px solid #ff4000;
+    padding: 2rem 3rem;
+    font-size: 2rem;
+    margin: 1rem;
+  }
+}
