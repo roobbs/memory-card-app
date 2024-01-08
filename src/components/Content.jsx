@@ -7,6 +7,7 @@ export default function Content() {
   const [bestScore, setBestScore] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
+  const [win, setWin] = useState(null);
 
   useEffect(() => {
     if (score > bestScore) {
@@ -21,15 +22,12 @@ export default function Content() {
   const handleCardClick = (id) => {
     setClickedCards((prevClickedCards) => [...prevClickedCards, id]);
     if (clickedCards.includes(id)) {
-      setScore(0);
-      setClickedCards([]);
+      setWin(false);
       return;
     }
     if (score === allCards.length - 1) {
-      console.log("you Won!");
-      getCards();
-      setScore(0);
-      setClickedCards([]);
+      setWin(true);
+      setBestScore(0);
       return;
     }
     setScore((prevScore) => prevScore + 1);
@@ -54,11 +52,17 @@ export default function Content() {
     return shuffledArray;
   };
 
+  function resetGame() {
+    setScore(0);
+    setWin(null);
+    setClickedCards([]);
+    getCards();
+  }
   return (
     <main className="content">
       <div className="scoreDiv">
         <div className="score">
-          Score: <div className="num">{score}</div>
+          Score: <div className="num">{score}/10</div>
         </div>
         <div className="score best">
           Best Score: <div className="num">{bestScore}</div>
@@ -77,6 +81,20 @@ export default function Content() {
       <button onClick={getCards} className="buttonChange">
         Change Cards
       </button>
+      {win !== null && (
+        <section className="win">
+          <div className="winSquare">
+            <div>
+              {win === false
+                ? "You clicked twice on the same card :("
+                : "Excelent! You have a nice memory ;)"}
+            </div>
+            <button onClick={resetGame} className="buttonWin">
+              Play Again
+            </button>
+          </div>
+        </section>
+      )}
     </main>
   );
 }

@@ -4,28 +4,36 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   background-image: url(./assets/wallpaper.jpg!d);
+  background-size: cover;
   background-position: bottom;
 }
 .header {
-  font-family: monospace;
-  color: #646cff;
+  /* font-family: monospace; */
+  color: #ff9d00;
   font-size: 2rem;
+  font-weight: 900;
   display: flex;
-  justify-content: center;
-  padding: 0.6rem;
+  justify-content: space-around;
+  padding: 0.5rem 2rem;
+  padding-bottom: 0;
+}
+.logo {
+  height: 80px;
+  width: 80px;
 }
 .footer {
   display: flex;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-weight: bolder;
 }
 .content {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding-top: 1rem;
 }
 .scoreDiv {
-  background-color: rgb(121, 121, 121);
+  background-color: rgb(69, 69, 69);
   align-self: center;
   padding: 0.7rem 3rem;
   border-radius: 10px;
@@ -44,13 +52,19 @@
 .card {
   height: 15rem;
   width: 11rem;
-  background-color: rgb(214, 104, 0);
+  background-color: rgb(224, 75, 0);
   border-radius: 10px;
   padding: 1rem;
   font-weight: bolder;
   color: rgb(255, 255, 255);
   font-family: monospace;
   font-size: 1.3rem;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.1);
+  background-color: #c82f00;
 }
 .cardImage {
   width: 200px;
@@ -72,6 +86,48 @@
 }
 .buttonChange {
   align-self: center;
-  background-color: rgb(129, 20, 20);
   border: 1px solid rgb(255, 215, 188);
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #ff3700;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+.buttonChange:hover,
+.buttonWin:hover {
+  background-color: #c80003;
+}
+.win {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: grid;
+  place-items: center;
+}
+.winSquare {
+  border: 2px solid #ff4000;
+  border-radius: 15px;
+  background-color: rgb(255, 221, 198);
+  padding: 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #ff4000;
+}
+.buttonWin {
+  background-color: #ff4000;
+  transition: background-color 0.25s;
+  padding: 1rem;
+  align-self: center;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
