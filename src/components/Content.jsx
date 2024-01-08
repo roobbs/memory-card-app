@@ -57,10 +57,11 @@ export default function Content() {
   return (
     <main className="content">
       <div className="scoreDiv">
-        <div className="score"> Score: {score}</div>
-        <div className="score best"> Best Score: {bestScore}</div>
-        <div>
-          Clicked Cards: {(clickedCards.length > 0 && clickedCards) || 0}
+        <div className="score">
+          Score: <div className="num">{score}</div>
+        </div>
+        <div className="score best">
+          Best Score: <div className="num">{bestScore}</div>
         </div>
       </div>
       <div className="cards">

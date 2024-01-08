@@ -3,6 +3,8 @@
   width: 100vw;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  background-image: url(./assets/wallpaper.jpg!d);
+  background-position: bottom;
 }
 .header {
   font-family: monospace;
@@ -25,11 +27,12 @@
 .scoreDiv {
   background-color: rgb(121, 121, 121);
   align-self: center;
-  padding: 0.4rem 1rem;
+  padding: 0.7rem 3rem;
   border-radius: 10px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  gap: 3rem;
+  align-self: flex-start;
+  margin-left: 7rem;
 }
 .cards {
   padding: 1rem;
@@ -39,18 +42,36 @@
   gap: 1rem;
 }
 .card {
-  min-height: 15rem;
-  min-width: 10rem;
-  background-color: rgb(59, 81, 74);
+  height: 15rem;
+  width: 11rem;
+  background-color: rgb(214, 104, 0);
   border-radius: 10px;
   padding: 1rem;
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 1.3rem;
 }
 .cardImage {
-  height: 100px;
-  width: 100px;
+  width: 200px;
+  height: 200px;
   border: 2px solid white;
   border-radius: 6px;
+  object-fit: cover;
+}
+.score {
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.num {
+  font-size: 20px;
+  color: rgb(255, 196, 0);
 }
 .buttonChange {
   align-self: center;
+  background-color: rgb(129, 20, 20);
+  border: 1px solid rgb(255, 215, 188);
 }
