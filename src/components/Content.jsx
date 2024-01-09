@@ -17,6 +17,7 @@ export default function Content() {
   }, [score, bestScore]);
 
   useEffect(() => {
+    //borrar
     getCards();
   }, []); // Initial setup
 
@@ -55,21 +56,33 @@ export default function Content() {
   };
 
   function resetGame() {
+    if (win === true) setBestScore(0);
     setScore(0);
     setWin(null);
     setClickedCards([]);
     getCards();
   }
+  function startGame() {
+    setWin();
+  }
   return (
     <main className="content">
-      <div className="scoreDiv">
-        <div className="score">
-          Score: <div className="num">{score}/10</div>
+      <div className="info">
+        <div className="infoText">
+          {score === 0
+            ? "Let's test your memory! Don't click twice on the same card"
+            : "Try not to click the same card!"}
         </div>
-        <div className="score best">
-          Best Score: <div className="num">{bestScore}</div>
+        <div className="scores">
+          <div className="score">
+            Score: <div className="num">{score}/10</div>
+          </div>
+          <div className="score best">
+            Best Score: <div className="num">{bestScore}</div>
+          </div>{" "}
         </div>
       </div>
+
       <div className="cards">
         {selectedCards.map((card) => (
           <Card
@@ -81,7 +94,7 @@ export default function Content() {
         ))}
       </div>
       <button onClick={getCards} className="buttonChange">
-        Change Cards
+        Mix Cards Again
       </button>
       {win !== null && (
         <section className="win">
